@@ -1,2 +1,2 @@
 # blog
-Code examples from my blog https://rafaelnaufal.com
+Source code examples from my blog https://rafaelnaufal.com
