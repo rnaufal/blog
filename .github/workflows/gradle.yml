@@ -23,3 +23,5 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew clean build
       working-directory: ./summaries
+    - name: Coveralls GitHub Action
+      uses: coverallsapp/github-action@v1.0.1
