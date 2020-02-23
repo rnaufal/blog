@@ -10,9 +10,9 @@ public class CustomCollectorCharSummarizer implements CharSummarizer {
     @Override
     public CharSummaryStatistics summarize(final String arg) {
         return StringUtils.defaultString(arg)
-                          .chars()
-                          .collect(CharSummaryStatistics::new,
-                                   CharSummaryStatistics::accept,
-                                   CharSummaryStatistics::combine);
+                .chars()
+                .collect(CharSummaryStatistics::new,
+                        CharSummaryStatistics::accept,
+                        CharSummaryStatistics::combine);
     }
 }
