@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 1.13
     - name: Build with Gradle
-      run: ./gradlew clean build jacocoTestReport pitest coveralls
+      run: ./gradlew build jacocoTestReport pitest coveralls
       working-directory: ./summaries
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
