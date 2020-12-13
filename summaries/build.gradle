@@ -2,11 +2,8 @@ buildscript {
     repositories {
         mavenCentral()
     }
-    configurations.maybeCreate('pitest')
     dependencies {
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
-        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.5'
-        pitest 'org.pitest:pitest-junit5-plugin:0.9'
     }
 }
 
@@ -14,10 +11,10 @@ plugins {
     id 'java-library'
     id 'jacoco'
     id 'com.github.kt3k.coveralls' version '2.8.4'
+    id 'info.solidsoft.pitest' version '1.5.2'
 }
 
 apply plugin: 'org.junit.platform.gradle.plugin'
-apply plugin: 'info.solidsoft.pitest'
 
 group 'br.com.rnaufal'
 version '1.0.0-SNAPSHOT'
@@ -40,7 +37,7 @@ ext {
 }
 
 jacoco {
-    toolVersion = "0.8.4"
+    toolVersion = "0.8.6"
     applyTo junitPlatformTest
 }
 
@@ -68,7 +65,7 @@ jacocoTestCoverageVerification {
 }
 
 pitest {
-    testPlugin = "junit5"
+    junit5PluginVersion = '0.12'
 }
 
 tasks.coveralls {
